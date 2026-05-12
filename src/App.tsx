@@ -219,6 +219,59 @@ export default function App() {
           </div>
         </section>
 
+        {/* Example Workflow / Real Automation Section */}
+        <section className="relative z-20 py-32 bg-base">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+              <div className="space-y-4 max-w-2xl">
+                <h2 className="text-4xl md:text-6xl font-display font-bold">
+                  Workflows we've <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon to-accent">engineered</span>
+                </h2>
+                <p className="text-white/60 text-lg">
+                  A look beneath the hood at the complex, multi-node infrastructure we build to replace manual operations.
+                </p>
+              </div>
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="rounded-3xl border border-white/10 overflow-hidden bg-surface relative group shadow-2xl shadow-primary/5"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10 pointer-events-none" />
+              
+              {/* NOTE: User uploaded image goes here. using fallback in onError */}
+              <img 
+                src="/workflow.jpg" 
+                alt="Automated LinkedIn Outreach Workflow" 
+                className="w-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+                style={{ aspectRatio: '16/9' }}
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop";
+                }}
+              />
+              
+              <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20 w-full">
+                <div className="flex flex-wrap gap-3 mb-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/50 bg-accent/20 text-accent text-xs font-bold tracking-widest uppercase backdrop-blur-md">
+                    LinkedIn Automation
+                  </div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-black/50 text-white/70 text-xs font-bold tracking-widest uppercase backdrop-blur-md">
+                    Apify + AI + Gmail
+                  </div>
+                </div>
+                <h3 className="text-3xl md:text-5xl font-display font-bold mb-4 text-white">Automated Lead Sourcing & Outreach</h3>
+                <p className="text-white/70 max-w-2xl text-lg">
+                  We engineered an n8n workflow that automatically scrapes prospect data from LinkedIn, enriches company profiles, uses OpenRouter LLMs to draft hyper-personalized emails, and sends them directly via your Gmail account. 
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Design Section */}
         <section className="relative z-30 py-32 bg-surface/50 border-y border-white/5 backdrop-blur-lg">
           <div className="max-w-7xl mx-auto px-6">
